@@ -62,7 +62,7 @@ jobs:
         
         - name: check Code Coverage
           run: npm run coverage
-          continue-on-error: true
+         # continue-on-error: true
         
         - name: Archive Test Result
           if: failure() && (steps.nodejs-unit-testing-step.outcome == 'failure' || steps.nodejs-unit-testing-step.outcome == 'success')
