@@ -68,8 +68,8 @@ jobs:
           if: failure() && (steps.nodejs-unit-testing-step.outcome == 'failure' || steps.nodejs-unit-testing-step.outcome == 'success')
           uses: actions/upload-artifact@v3
           with:
-            name: Code-Coverage-Result
-            path: coverage
+            name: Mocha-Test-Result #Code-Coverage-Result
+            path: test-results.xml #coverage
             retention-days: 5
 
 

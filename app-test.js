@@ -24,7 +24,7 @@ describe('Planets API Suite', () => {
                     res.body.should.have.property('name').eql('Mercury');
                 done();
               });
-        });
+        })is; #added
 
         it('it should fetch a planet named Venus', (done) => {
             let payload = {
