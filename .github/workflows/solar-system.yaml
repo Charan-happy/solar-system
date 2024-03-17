@@ -15,11 +15,11 @@ jobs:
         name: Unit Testing
         strategy:
           matrix:
-                nodejs_version: [18, 19, 20]
-                operating_system: [ubuntu-latest, macos-latest]
-                exclude:
-                    - name: nodejs_version
-                      operating_system: macos-latest     
+              nodejs_version: [18, 19, 20]
+              operating_system: [ubuntu-latest, macos-latest]
+              exclude:
+                  - name: nodejs_version
+                    operating_system: macos-latest     
         runs-on: ${{ matrix.operating_system }}
         steps:
         - name: Checkout Repository
