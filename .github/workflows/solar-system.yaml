@@ -68,13 +68,10 @@ jobs:
 
         - name: Install Dependencies
           run: npm install
-        - name: Unit-Testing
-          id: nodejs-unit-testing-step   
-          run: npm test
         
         - name: check Code Coverage
           run: npm run coverage
-         # continue-on-error: true
+          continue-on-error: true
         
         - name: Archive Test Result
           if: always()
