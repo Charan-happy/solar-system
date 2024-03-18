@@ -77,10 +77,23 @@ jobs:
           if: always()
           uses: actions/upload-artifact@v3
           with:
-            name: Mocha-Test-Result #Code-Coverage-Result
-            path: test-results.xml #coverage
+            name: Code-Coverage-Result
+            path: coverage
             retention-days: 5
+        
+    docker:
+        name: Containerization
+        needs: [unit-testing, code-coverage]
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@v4
 
+        - name: Dockerhub Login
+          uses: actions/login-actions@v2.2.0
+          with:
+            username: ${{ vars.Dockerhub_USERNAME }}
+            password: ${{ secrets.Dockerhub_PASSWORD }}
 
 
     
