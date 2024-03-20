@@ -19,7 +19,7 @@ jobs:
             ports:
               - 2701:2707
         env:
-            MONGO_URI: 'mongodb//localhost:2707/superData'
+            MONGO_URI: 'mongodb://localhost:2707/superData'
             MONGO_USERNAME: non-prod-user
             MONGO_PASSWORD: non-prod-password
         strategy:
